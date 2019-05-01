@@ -67,8 +67,8 @@ viewForm =
             ]
             [ select
                 [ onInput FormatChanged ]
-                [ option [ value "any" ] [ text "Tous" ]
-                , option [ value "landscape" ] [ text "Paysage" ]
+                [ option [ value "any" ] [ text "Any" ]
+                , option [ value "landscape" ] [ text "Landscape" ]
                 , option [ value "portrait" ] [ text "Portrait" ]
                 ]
             ]
