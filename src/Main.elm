@@ -2,7 +2,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (..)
-import Html.Attributes exposing (class, type_)
+import Html.Attributes exposing (class, src, style, type_)
 import Html.Events exposing (onInput, onSubmit)
 import Http
 import Image exposing (..)
@@ -38,13 +38,20 @@ view model =
     div [ class "container" ]
         [ h1 [ class "title" ] [ text "elm image search" ]
         , viewForm
-        , viewResponse model
+        , if model.message == "" then
+            viewResults model
+
+          else
+            viewError model
         ]
 
 
 viewForm : Html Msg
 viewForm =
-    form [ onSubmit FormSubmitted ]
+    form
+        [ onSubmit FormSubmitted
+        , style "padding-bottom" "1rem"
+        ]
         [ input
             [ type_ "text"
             , class "medium input"
@@ -54,13 +61,24 @@ viewForm =
         ]
 
 
-viewResponse : Model -> Html Msg
-viewResponse model =
-    if model.message /= "" then
-        div [] [ text model.message ]
+viewResults : Model -> Html Msg
+viewResults model =
+    div [ class "columns is-multiline" ] (List.map viewThumbnail model.images)
 
-    else
-        text ""
+
+viewThumbnail : Image -> Html Msg
+viewThumbnail image =
+    div [ class "column is-one-quarter" ]
+        [ img [ src image.thumbnailUrl ] []
+        ]
+
+
+viewError : Model -> Html Msg
+viewError model =
+    div [ class "notification is-danger" ]
+        [ button [ class "delete" ] []
+        , text model.message
+        ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
