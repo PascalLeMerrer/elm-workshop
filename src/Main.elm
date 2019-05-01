@@ -2,20 +2,22 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (..)
-import Html.Attributes exposing (class, src, style, type_)
+import Html.Attributes exposing (class, src, style, type_, value)
 import Html.Events exposing (onInput, onSubmit)
 import Http
-import Image exposing (..)
+import Image exposing (Format(..), Image, filterImages, imageListDecoder)
 
 
 type Msg
     = InputChanged String
+    | FormatChanged String
     | FormSubmitted
     | ResponseReceived (Result Http.Error (List Image))
 
 
 type alias Model =
-    { images : List Image
+    { format : Format
+    , images : List Image
     , message : String
     , searchTerms : String
     }
@@ -25,7 +27,8 @@ init :
     ()
     -> ( Model, Cmd Msg )
 init _ =
-    ( { images = []
+    ( { format = Any
+      , images = []
       , message = ""
       , searchTerms = ""
       }
@@ -58,12 +61,23 @@ viewForm =
             , onInput InputChanged
             ]
             []
+        , div
+            [ class "select"
+            , style "margin-top" "1rem"
+            ]
+            [ select
+                [ onInput FormatChanged ]
+                [ option [ value "any" ] [ text "Tous" ]
+                , option [ value "landscape" ] [ text "Paysage" ]
+                , option [ value "portrait" ] [ text "Portrait" ]
+                ]
+            ]
         ]
 
 
 viewResults : Model -> Html Msg
 viewResults model =
-    div [ class "columns is-multiline" ] (List.map viewThumbnail model.images)
+    div [ class "columns is-multiline" ] (List.map viewThumbnail <| filterImages model.format model.images)
 
 
 viewThumbnail : Image -> Html Msg
@@ -86,6 +100,21 @@ update msg model =
     case msg of
         InputChanged value ->
             ( { model | searchTerms = value }, Cmd.none )
+
+        FormatChanged selectedOption ->
+            let
+                newFormat =
+                    case selectedOption of
+                        "portrait" ->
+                            Portrait
+
+                        "landscape" ->
+                            Landscape
+
+                        _ ->
+                            Any
+            in
+            ( { model | format = newFormat }, Cmd.none )
 
         FormSubmitted ->
             let
