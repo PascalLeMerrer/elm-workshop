@@ -5,17 +5,19 @@ import Html exposing (..)
 import Html.Attributes exposing (class, type_)
 import Html.Events exposing (onInput, onSubmit)
 import Http
+import Image exposing (..)
 
 
 type Msg
     = InputChanged String
     | FormSubmitted
-    | ResponseReceived (Result Http.Error String)
+    | ResponseReceived (Result Http.Error (List Image))
 
 
 type alias Model =
-    { searchTerms : String
-    , response : String
+    { images : List Image
+    , message : String
+    , searchTerms : String
     }
 
 
@@ -23,8 +25,9 @@ init :
     ()
     -> ( Model, Cmd Msg )
 init _ =
-    ( { searchTerms = ""
-      , response = ""
+    ( { images = []
+      , message = ""
+      , searchTerms = ""
       }
     , Cmd.none
     )
@@ -53,7 +56,11 @@ viewForm =
 
 viewResponse : Model -> Html Msg
 viewResponse model =
-    div [] [ text model.response ]
+    if model.message /= "" then
+        div [] [ text model.message ]
+
+    else
+        text ""
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -70,16 +77,16 @@ update msg model =
                             "https://unsplash.noprod-b.kmt.orange.com"
                                 ++ "/search/photos?query="
                                 ++ model.searchTerms
-                        , expect = Http.expectString ResponseReceived
+                        , expect = Http.expectJson ResponseReceived imageListDecoder
                         }
             in
             ( model, httpCommand )
 
-        ResponseReceived (Ok jsonString) ->
-            ( { model | response = jsonString }, Cmd.none )
+        ResponseReceived (Ok images) ->
+            ( { model | images = images }, Cmd.none )
 
         ResponseReceived (Err _) ->
-            ( { model | response = "Communication error" }, Cmd.none )
+            ( { model | message = "Communication error" }, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
