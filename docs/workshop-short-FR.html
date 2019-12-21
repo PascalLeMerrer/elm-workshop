@@ -441,6 +441,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Introduction au langage de programmation Elm</strong>.</p>
 </div>
 <div class="paragraph">
+<p><strong>Version courte</strong></p>
+</div>
+<div class="paragraph">
 <p>Auteurs :</p>
 </div>
 <div class="paragraph">
@@ -448,7 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <a href="mailto:claire.gilbertas@orange.com">Claire Gilbertas</a></p>
 </div>
 <div class="paragraph">
-<p>Licence: <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/fr/deed.en">Attribution-NonCommercial-ShareAlike 2.0 France (CC BY-NC-SA 2.0 FR)</a></p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/fr/deed.en">Attribution-NonCommercial-ShareAlike 2.0 France (CC BY-NC-SA 2.0 FR)</a></p>
 </div>
 <div class="imageblock text-right">
 <div class="content">
@@ -461,15 +464,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>une version complète, dans laquelle vous devez installer elm et quelques outils, en utilisant npm, sur votre ordinateur. Dans cette version vous utiliserez l&#8217;éditeur de votre choix, et apprendrez à écrire des tests unitaires, en plus de créer une application. Vous aurez besoin d&#8217;environ 3 heures pour compléter cette version. Si vous n&#8217;avez pas assez de temps maintenant, ne vous inquiétez pas, tout est fourni pour que vous puissiez terminer plus tard.</p>
+<p><a href="https://pascallemerrer.github.io/elm-workshop/long-version">une version complète</a>, dans laquelle vous devez installer Elm et quelques outils sur votre ordinateur, en utilisant npm. Dans cette version, vous utiliserez l&#8217;éditeur de votre choix et apprendrez à écrire des tests unitaires, en plus de créer une application. Vous aurez besoin d&#8217;environ 3 heures pour compléter cette version. Si vous n&#8217;avez pas assez de temps maintenant, ne vous inquiétez pas, tout est fourni pour que vous puissiez le terminer plus tard.</p>
 </li>
 <li>
-<p><a href="https://pascallemerrer.github.io/elm-workshop/">une version courte</a>, dans laquelle vous n&#8217;avez rien à installer sur votre ordinateur. Vous utiliserez un éditeur en ligne. Cet environnement ne permet pas d&#8217;exécuter des tests unitaires. Ainsi, la dernière partie du tutoriel complet, qui ajoute de nouvelles fonctionnalités en appliquant TDD, sera ignorée. C&#8217;est pourquoi cette version sera un peu plus rapide à compléter que la version complète.</p>
+<p>une version courte, dans laquelle vous n&#8217;avez rien à installer sur votre ordinateur. Vous utiliserez un éditeur en ligne. Cet environnement ne permet pas d&#8217;exécuter des tests unitaires. Ainsi, la dernière partie du tutoriel complet, qui ajoute de nouvelles fonctionnalités d&#8217;une manière DRT, sera ignorée. C&#8217;est pourquoi cette version sera un peu plus rapide à compléter que la version complète.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Ce document est le matériel pour la version complète.</strong></p>
+<p><strong>Ce document est le support pour la version courte.</strong></p>
 </div>
 </div>
 </div>
@@ -477,7 +480,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_objectifs_de_latelier">1. Objectifs de l&#8217;atelier</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Après cet atelier, vous devriez être en mesure de créer et de tester une application Elm de base.</p>
+<p>Après cet atelier, vous devriez être en mesure de créer une application Elm de base.</p>
 </div>
 <div class="sect2">
 <h3 id="_le_contenu_de_latelier">1.1. Le contenu de l&#8217;atelier</h3>
@@ -490,28 +493,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>introduction au langage et aux outils</p>
 </li>
 <li>
-<p>premiers pas avec elm</p>
+<p>premiers pas avec Elm</p>
 </li>
 <li>
 <p>principes de base de la programmation fonctionnelle</p>
 </li>
 <li>
-<p>l&#8217;architecture d&#8217;une application elm</p>
+<p>l&#8217;architecture d&#8217;une application Elm</p>
 </li>
 <li>
 <p>communication client/serveur</p>
 </li>
-<li>
-<p>tester une application elm, utiliser le module Debug</p>
-</li>
 </ul>
-</div>
-<div class="paragraph">
-<p>La durée de l&#8217;atelier ne sera probablement pas assez longue pour que vous puissiez faire tout cela.
-C&#8217;est délibéré, alors ne vous inquiétez pas. Mais vous pouvez continuer plus tard si votre intérêt a été éveillé.</p>
-</div>
-<div class="paragraph">
-<p>Les solutions de la partie pratique sont disponibles <a href="https://github.com/PascalLeMerrer/elm-workshop">sur github</a></p>
 </div>
 </div>
 </div>
@@ -610,197 +603,31 @@ Le code Elm n&#8217;est pas déployé en production, seul le Javacript compilé 
 </tr>
 </table>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_installation">3. Installation</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Prérequis : npm</p>
+<p>Éditeur == Éditeur</p>
 </div>
 <div class="paragraph">
-<p><em>npm lui-même est installé en tant que partie de <a href="https://nodejs.org/en/">nodeJS</a>, donc si vous n&#8217;avez pas npm, vous devrez installer nodeJS.</em>.</p>
+<p>Vous utiliserez <a href="https://ellie-app.com">Ellie</a>, qui est un environnement de développement Elm en ligne.</p>
 </div>
 <div class="paragraph">
-<p>Pour installer l&#8217;outillage nécessaire à l&#8217;atelier, exécutez :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>npm install install --global elm elm elm-format elm-test</pre>
-</div>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>En cas de problèmes de droits sous Linux, essayez <a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">cette solution</a>.</p>
+<p>Il est destiné à être utilisé pour l&#8217;initiation à Elm, ou pour partager des examples de code Elm exécutables en ligne.</p>
 </div>
 <div class="paragraph">
-<p>Vous devriez pouvoir utiliser npm sans sudo.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Une installation sans npm est possible pour Elm et elm-format, mais pas elm-test:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/elm/compiler/releases">binaires elm</a></p>
-</li>
-<li>
-<p><a href="https://github.com/avh4/elm-format/releases">binaires elm-format</a></p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_éditeurs">4. Éditeurs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Il existe des plugins pour :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/jcollard/elm-mode">Emacs</a></p>
-</li>
-<li>
-<p><a href="https://github.com/klazuka/intellij-elm">IntelliJ</a></p>
-</li>
-<li>
-<p><a href="https://packagecontrol.io/packages/Elm%20Language%20Support">Sublime Text</a></p>
-</li>
-<li>
-<p><a href="https://github.com/ElmCast/elm-vim">Vim</a></p>
-</li>
-<li>
-<p><a href="https://github.com/sbrink/vscode-elm">VS Code</a></p>
-</li>
-<li>
-<p><a href="https://atom.io/packages/language-elm">Atom plugin</a>, à compléter avec <a href="https://atom.io/packages/elmjutsu">elmjutsu</a></p>
-</li>
-</ul>
+<p>Quand vous ouvrez Ellie, il contient une application d&#8217;exemple. Vous pouvez l&#8217;exécuter en cliquant sur le bouton de compilation, et voir le résultat dans la partie droite de l&#8217;écran.</p>
 </div>
 <div class="paragraph">
-<p>NB : le plugin doit supporter elm 0.19</p>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Certains plugins ne sont pas maintenus :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Le <a href="https://github.com/rundis/elm-light">plugin pour Light Table </a> n&#8217;a pas été mis à jour et supporte uniquement elm 0.18</p>
-</li>
-<li>
-<p>Le plugin pour <a href="https://github.com/lepinay/elm-brackets">Brackets</a> est aussi obsolète.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_nous_vous_recommandons">4.1. Nous vous recommandons&#8230;&#8203;.</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Intellij/Webstorm/&#8230;&#8203;..</p>
-</li>
-<li>
-<p>le plugin elm pour cet IDE</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Au moment de la rédaction de ce document, cet IDE est celui qui offre à notre connaissance le meilleur support d&#8217;Elm.
-Son utilisation n&#8217;est absolument pas obligatoire, vous pouvez bien sûr utiliser un autre outil si vous préférez.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_configurez_le_plugin_elm_pour_intellij">4.2. Configurez le plugin elm pour Intellij</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>ouvrez <code>Préférences &gt; langages &amp; frameworks &gt; elm</code>.</p>
-</li>
-<li>
-<p>utilisez les boutons de découverte automatique pour elm, elm-format et elm-test</p>
-</li>
-<li>
-<p>si cela ne fonctionne pas, utilisez <code>which elm</code>, <code>which elm-format</code> et/ou <code>which elm-test</code> pour obtenir le chemin à entrer dans les champs <code>location</code>.</p>
-</li>
-<li>
-<p>cochez "Exécuter lors de l&#8217;enregistrement du fichier" sous le chemin de elm-format</p>
-</li>
-<li>
-<p>ne vous inquiétez pas si un message d&#8217;erreur apparaît dans la section elm-test, c&#8217;est parce que vous n&#8217;avez pas encore de test.</p>
-</li>
-</ol>
+<p>Il suffit d&#8217;effacer l&#8217;application dans la partie supérieure gauche pour être prêt à commencer l&#8217;atelier.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_hello_world">5. Hello, World!</h2>
+<h2 id="_bonjour_monde">3. Bonjour, Monde !</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_lancer_un_projet_elm">5.1. Lancer un projet Elm</h3>
+<h3 id="_une_application_elm_de_base">3.1. Une application Elm de base</h3>
 <div class="paragraph">
-<p>Ouvrez un terminal, et dans le répertoire racine du projet, tapez :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>elm init</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>elm init crée le fichier elm.json qui décrit les dépendances du projet.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_une_application_elm_de_base">5.2. Une application Elm de base</h3>
-<div class="paragraph">
-<p><span class="small">src/Main.elm</span></p>
+<p>Copiez ce code dans l&#8217;éditeur :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -817,7 +644,7 @@ Son utilisation n&#8217;est absolument pas obligatoire, vous pouvez bien sûr ut
 <table>
 <tr>
 <td><img src="./images/icons/callouts/1.png" alt="1"></td>
-<td>Un module est déclaré dans un fichier du même nom.</td>
+<td>Déclare le module `Main', et rend publique la fonction `main'.</td>
 </tr>
 <tr>
 <td><img src="./images/icons/callouts/2.png" alt="2"></td>
@@ -825,14 +652,8 @@ Son utilisation n&#8217;est absolument pas obligatoire, vous pouvez bien sûr ut
 </tr>
 <tr>
 <td><img src="./images/icons/callouts/3.png" alt="3"></td>
-<td>La fonction principale appelle la fonction <code>text</code>
-et lui passe une chaîne de caractères en paramètre</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Quelques éléments de syntaxe :</p>
-</div>
+<td>La fonction principale appelle le texte + fonction
+et lui passe une chaîne de caractères en paramètre
 <div class="ulist">
 <ul>
 <li>
@@ -845,16 +666,16 @@ et lui passe une chaîne de caractères en paramètre</td>
 <p>Le nom des fonctions et des valeurs commence par une <strong>lettre minuscule</strong>.</p>
 </li>
 <li>
-<p>Il n&#8217;y a pas de mot-clé <code>return</code> ou équivalent.</p>
+<p>Il n&#8217;y a pas de mot-clé "return" ou équivalent.</p>
 </li>
 <li>
 <p>la <strong>valeur retournée</strong> est l&#8217;évaluation de la dernière ligne exécutée</p>
 </li>
 <li>
-<p>Le résultat de la fonction <code>main</code> est du type <strong>Html</strong>, et sera rapporté par le runtime elm dans le DOM.</p>
+<p>Le résultat de la fonction `main' est du type <strong>Html</strong>, et sera reporté par le runtime elm dans le DOM.</p>
 </li>
 <li>
-<p>L&#8217;indentation est significative : le fait que  <code>text "Hello, World!"</code> soit indenté implique que cette ligne fait partie du corps de la fonction principale.</p>
+<p>L&#8217;indentation est significative : le fait que le texte "Hello, World !" soit indenté implique que cette ligne fait partie du corps de la fonction principale.</p>
 </li>
 <li>
 <p>Le <strong>nombre d&#8217;espaces</strong> utilisés pour l&#8217;indentation est <strong>libre</strong>.</p>
@@ -863,67 +684,64 @@ et lui passe une chaîne de caractères en paramètre</td>
 <p><code>--</code> est le délimiteur pour les commentaires de ligne</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Sélectionnez le fichier `elm.json' à la racine de votre projet lorsque l&#8217;IDE vous proposera de l&#8217;ajouter.</strong></p>
+</div></td>
+</tr>
+</table>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_compiler_lapplication">5.3. Compiler l&#8217;application</h3>
+<h3 id="_compiler_lapplication">3.2. Compiler l&#8217;application</h3>
 <div class="paragraph">
-<p>Dans le terminal, tapez :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>elm make src/Main.elm --output elm.js</pre>
-</div>
+<p>Cliquez simplement sur le bouton <strong>Compile</strong>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Le résultat de la compilation est un seul fichier JS, quel que soit le nombre de fichiers source elm.</p>
+<p>Le résultat de la compilation est un seul fichier JS, quel que soit le nombre de fichiers source Elm.</p>
 </li>
 <li>
 <p>Nous n&#8217;éditons jamais ce fichier, dont le contenu hautement optimisé n&#8217;est pas conçu pour être lu.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_formater_le_code">5.4. Formater le code</h3>
 <div class="paragraph">
-<p>Si votre IDE/éditeur ne formate pas automatiquement le code,
-vous devriez le faire régulièrement en tapant dans la console :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre> elm-format src/Main.elm  --yes</pre>
-</div>
+<p>Dans Ellie, vous ne verrez pas le fichier JS résultant. Il sera automatiquement inclus dans la page html que vous pouvez voir en bas à gauche de l&#8217;écran.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_créer_index_html">5.5. Créer index.html</h3>
+<h3 id="_formatez_le_code">3.3. Formatez le code</h3>
 <div class="paragraph">
-<p>Créez un fichier index.html <strong> à la racine du projet</strong>, où elm.js a été généré.</p>
+<p>Utilisez le bouton</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/format-icon.png" alt="format icon">
+</div>
 </div>
 <div class="paragraph">
-<p><span class="small">index.html :</span></p>
+<p>pour formater le code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_regardez_index_html">3.4. Regardez index.html</h3>
+<div class="paragraph">
+<p>Ellie vous permet de personnaliser la page Html qui chargera l&#8217;application Elm. Elle ressemble à ceci :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="html"><span></span><span class="tok-cp">&lt;!DOCTYPE html&gt;</span>
-<span class="tok-p">&lt;</span><span class="tok-nt">html</span><span class="tok-p">&gt;</span>
+<pre class="pygments highlight"><code data-lang="html"><span></span><span class="tok-p">&lt;</span><span class="tok-nt">html</span><span class="tok-p">&gt;</span>
 <span class="tok-p">&lt;</span><span class="tok-nt">head</span><span class="tok-p">&gt;</span>
-    <span class="tok-p">&lt;</span><span class="tok-nt">meta</span> <span class="tok-na">charset</span><span class="tok-o">=</span><span class="tok-s">&quot;utf-8&quot;</span> <span class="tok-p">/&gt;</span>
-    <span class="tok-p">&lt;</span><span class="tok-nt">title</span><span class="tok-p">&gt;</span>Elm image search<span class="tok-p">&lt;/</span><span class="tok-nt">title</span><span class="tok-p">&gt;</span>
-    <strong><span class="tok-p">&lt;</span><span class="tok-nt">script</span> <span class="tok-na">src</span><span class="tok-o">=</span><span class="tok-s">&quot;elm.js&quot;</span><span class="tok-p">&gt;&lt;/</span><span class="tok-nt">script</span><span class="tok-p">&gt;</span></strong> <img src="./images/icons/callouts/1.png" alt="1">
+  <span class="tok-p">&lt;</span><span class="tok-nt">style</span><span class="tok-p">&gt;</span>
+    <span class="tok-c">/* you can style your program here */</span>
+  <span class="tok-p">&lt;/</span><span class="tok-nt">style</span><span class="tok-p">&gt;</span>
 <span class="tok-p">&lt;/</span><span class="tok-nt">head</span><span class="tok-p">&gt;</span>
 <span class="tok-p">&lt;</span><span class="tok-nt">body</span><span class="tok-p">&gt;</span>
-    <span class="tok-p">&lt;</span><span class="tok-nt">app</span><span class="tok-p">&gt;&lt;/</span><span class="tok-nt">app</span><span class="tok-p">&gt;</span> <img src="./images/icons/callouts/2.png" alt="2">
-    <span class="tok-p">&lt;</span><span class="tok-nt">script</span><span class="tok-p">&gt;</span>
-        <span class="tok-o"><strong></span><span class="tok-nx">Elm</span><span class="tok-p">.</span><span class="tok-nx">Main</span><span class="tok-p">.</span><span class="tok-nx">init</span><span class="tok-p">({</span> <span class="tok-nx">node</span><span class="tok-o">:</span> <span class="tok-nb">document</span><span class="tok-p">.</span><span class="tok-nx">querySelector</span><span class="tok-p">(</span><span class="tok-s2">&quot;app&quot;</span><span class="tok-p">)</span> <span class="tok-p">})</span><span class="tok-o"></strong></span> <img src="./images/icons/callouts/3.png" alt="3">
-    <span class="tok-p">&lt;/</span><span class="tok-nt">script</span><span class="tok-p">&gt;</span>
+  <span class="tok-p">&lt;</span><span class="tok-nt">main</span><span class="tok-p">&gt;&lt;/</span><span class="tok-nt">main</span><span class="tok-p">&gt;</span> <img src="./images/icons/callouts/1.png" alt="1">
+  <span class="tok-p">&lt;</span><span class="tok-nt">script</span><span class="tok-p">&gt;</span>
+    <span class="tok-kd">var</span> <span class="tok-nx">app</span> <span class="tok-o">=</span> <span class="tok-nx">Elm</span><span class="tok-p">.</span><span class="tok-nx">Main</span><span class="tok-p">.</span><span class="tok-nx">init</span><span class="tok-p">({</span> <span class="tok-nx">node</span><span class="tok-o">:</span> <span class="tok-nb">document</span><span class="tok-p">.</span><span class="tok-nx">querySelector</span><span class="tok-p">(</span><span class="tok-s1">&#39;main&#39;</span><span class="tok-p">)</span> <span class="tok-p">})</span> <img src="./images/icons/callouts/2.png" alt="2">
+    <span class="tok-c1">// you can use ports and stuff here</span>
+  <span class="tok-p">&lt;/</span><span class="tok-nt">script</span><span class="tok-p">&gt;</span>
 <span class="tok-p">&lt;/</span><span class="tok-nt">body</span><span class="tok-p">&gt;</span>
 <span class="tok-p">&lt;/</span><span class="tok-nt">html</span><span class="tok-p">&gt;</span></code></pre>
 </div>
@@ -932,47 +750,40 @@ vous devriez le faire régulièrement en tapant dans la console :</p>
 <table>
 <tr>
 <td><img src="./images/icons/callouts/1.png" alt="1"></td>
-<td>Chargement du fichier résultant de la compilation</td>
+<td>Le noeud HTML dans lequel l&#8217;application sera affichée</td>
 </tr>
 <tr>
 <td><img src="./images/icons/callouts/2.png" alt="2"></td>
-<td>Le nœud HTML dans lequel l&#8217;application sera affichée</td>
-</tr>
-<tr>
-<td><img src="./images/icons/callouts/3.png" alt="3"></td>
-<td>Lance l&#8217;application elm</td>
+<td>Lancer l&#8217;application elm</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>NB : n&#8217;oubliez pas de supprimer les légendes ("1", "2", "3") si vous avez copié le code ci-dessus.</strong></p>
+<p>La fonction <code>init</code> prend comme paramètre la référence du nœud dans lequel l&#8217;application doit être affichée</p>
 </div>
 <div class="paragraph">
-<p>La fonction init prend comme paramètre la référence du nœud dans lequel l&#8217;application doit être affichée</p>
+<p>Si vous n&#8217;utilisiez pas Ellie, vous devriez ajouter quelque chose comme <code>&lt;script src="elm.js"&gt;&lt;/script&gt;</code> pour charger le fichier JS résultant de la compilation.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_résultats_escomptés">5.6. Résultats escomptés</h3>
+<h3 id="_résultat_attendu">3.5. Résultat attendu</h3>
 <div class="paragraph">
-<p>Ouvrez index.html dans le navigateur pour voir le résultat</p>
+<p>Dans la partie droite de l&#8217;écran, vous devriez voir :</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/screenshots/HelloWorld.png" alt="HelloWorld">
+<img src="images/images/screenshots/HelloWorld.png" alt="HelloWorld">
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_premiers_pas">6. Premiers pas</h2>
+<h2 id="_premiers_pas">4. Premiers pas</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_produire_du_html">6.1. Produire du Html</h3>
-<div class="paragraph">
-<p><span class="small">src/Main.elm</span></p>
-</div>
+<h3 id="_produire_du_html">4.1. Produire du Html</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kn">module </span><span class="tok-nc">Main</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-nv">main</span><span class="tok-p">)</span>
@@ -1023,10 +834,7 @@ Dans l&#8217;exemple ci-dessus, h1 n&#8217;a pas d&#8217;attribut et a un seul e
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_ajouter_un_champ_de_saisie">6.2. Ajouter un champ de saisie</h3>
-<div class="paragraph">
-<p><span class="small">src/Main.elm</span></p>
-</div>
+<h3 id="_ajouter_un_champ_de_saisie">4.2. Ajouter un champ de saisie</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kn">module </span><span class="tok-nc">Main</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-nv">main</span><span class="tok-p">)</span>
@@ -1062,7 +870,7 @@ par une fonction nommée <code>type_</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_résultat_escompté">6.3. Résultat escompté</h3>
+<h3 id="_résultat_escompté">4.3. Résultat escompté</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/screenshots/PremiersPas.png" alt="PremiersPas">
@@ -1072,27 +880,19 @@ par une fonction nommée <code>type_</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_styles">7. Styles</h2>
+<h2 id="_styles">5. Styles</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_ajouter_une_feuille_de_style">7.1. Ajouter une feuille de style</h3>
+<h3 id="_ajouter_une_feuille_de_style">5.1. Ajouter une feuille de style</h3>
 <div class="paragraph">
-<p>Rendez-vous sur <a href="https://raw.githubusercontent.com/PascalLeMerrer/elm-workshop/master/bulma.min.css">bulma.min.min.css</a>, puis enregistrez-le dans le répertoire racine de votre projet.</p>
-</div>
-<div class="paragraph">
-<p><span class="small">index.html :</span></p>
+<p>Dans la partie Html de l&#8217;éditeur, ajoutez le chargement du framework CSS Bulma</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="html"><span></span><span class="tok-cp">&lt;!DOCTYPE html&gt;</span>
-<span class="tok-p">&lt;</span><span class="tok-nt">html</span><span class="tok-p">&gt;</span>
+<pre class="pygments highlight"><code data-lang="html"><span></span><span class="tok-p">&lt;</span><span class="tok-nt">html</span><span class="tok-p">&gt;</span>
 <span class="tok-p">&lt;</span><span class="tok-nt">head</span><span class="tok-p">&gt;</span>
-    <span class="tok-p">&lt;</span><span class="tok-nt">meta</span> <span class="tok-na">charset</span><span class="tok-o">=</span><span class="tok-s">&quot;utf-8&quot;</span> <span class="tok-p">/&gt;</span>
-    <span class="tok-p">&lt;</span><span class="tok-nt">title</span><span class="tok-p">&gt;</span>elm Image Search<span class="tok-p">&lt;/</span><span class="tok-nt">title</span><span class="tok-p">&gt;</span>
-    <strong><span class="tok-p">&lt;</span><span class="tok-nt">link</span> <span class="tok-na">rel</span><span class="tok-o">=</span><span class="tok-s">&quot;stylesheet&quot;</span> <span class="tok-na">type</span><span class="tok-o">=</span><span class="tok-s">&quot;text/css&quot;</span> <span class="tok-na">href</span><span class="tok-o">=</span><span class="tok-s">&quot;bulma.min.css&quot;</span> <span class="tok-p">/&gt;</span></strong>
-    <span class="tok-p">&lt;</span><span class="tok-nt">script</span> <span class="tok-na">src</span><span class="tok-o">=</span><span class="tok-s">&quot;elm.js&quot;</span><span class="tok-p">&gt;&lt;/</span><span class="tok-nt">script</span><span class="tok-p">&gt;</span>
-<span class="tok-p">&lt;/</span><span class="tok-nt">head</span><span class="tok-p">&gt;</span>
-...</code></pre>
+    <strong><span class="tok-p">&lt;</span><span class="tok-nt">link</span> <span class="tok-na">rel</span><span class="tok-o">=</span><span class="tok-s">&quot;stylesheet&quot;</span> <span class="tok-na">href</span><span class="tok-o">=</span><span class="tok-s">&quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css&quot;</span><span class="tok-p">&gt;</span></strong>
+<span class="tok-p">&lt;/</span><span class="tok-nt">head</span><span class="tok-p">&gt;</span>...</code></pre>
 </div>
 </div>
 <div class="admonitionblock note speaker">
@@ -1119,10 +919,7 @@ Cependant, certaines extensions incluent du JS (Slider, sélecteur d&#8217;icôn
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ajouter_des_classes_css">7.2. Ajouter des classes CSS</h3>
-<div class="paragraph">
-<p><span class="small">src/Main.elm</span></p>
-</div>
+<h3 id="_ajouter_des_classes_css">5.2. Ajouter des classes CSS</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kn">module </span><span class="tok-nc">Main</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-nv">main</span><span class="tok-p">)</span>
@@ -1142,26 +939,26 @@ Cependant, certaines extensions incluent du JS (Slider, sélecteur d&#8217;icôn
 </div>
 </div>
 <div class="sect2">
-<h3 id="_résultat_attendu">7.3. Résultat attendu</h3>
+<h3 id="_résultat_attendu_2">5.3. Résultat attendu</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/screenshots/Styles.png" alt="Styles">
 </div>
 </div>
 <div class="paragraph">
-<p>Le code de cette étape est disponible sur <a href="https://github.com/PascalLeMerrer/elm-workshop/tree/step2">le dépôt github</a>, sous le tag <strong>step 2</strong>.</p>
+<p>Le code de cette étape est disponible sur <a href="https://ellie-app.com/5y8hnDrXrsfa1">ici</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_programmation_fonctionnelle_les_bases_de_la_programmation">8. Programmation fonctionnelle : les bases de la programmation</h2>
+<h2 id="_programmation_fonctionnelle_les_bases_de_la_programmation">6. Programmation fonctionnelle : les bases de la programmation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Vous pouvez aller directement à <a href="#_annotations_de_type">Annotations de type</a> si vous êtes déjà familier avec les bases de la programmation fonctionnelle : fonctions pures, fonctions d&#8217;ordre supérieur, immutabilité, map/filter/reduce, lambdas&#8230;&#8203;</p>
 </div>
 <div class="sect2">
-<h3 id="_définition">8.1. Définition</h3>
+<h3 id="_définition">6.1. Définition</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -1177,7 +974,7 @@ Cependant, certaines extensions incluent du JS (Slider, sélecteur d&#8217;icôn
 </div>
 </div>
 <div class="sect2">
-<h3 id="_immutabilité">8.2. Immutabilité</h3>
+<h3 id="_immutabilité">6.2. Immutabilité</h3>
 <div class="paragraph">
 <p>Tout en Elm est immuable.</p>
 </div>
@@ -1215,7 +1012,7 @@ De façon sous-jacente, Le nouvel élément pointe simplement vers le premier é
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fonctions_dordre_supérieur">8.3. Fonctions d&#8217;ordre supérieur</h3>
+<h3 id="_fonctions_dordre_supérieur">6.3. Fonctions d&#8217;ordre supérieur</h3>
 <div class="paragraph">
 <p>Les langages fonctionnels permettent l&#8217;utilisation de fonctions d&#8217;ordre supérieur.</p>
 </div>
@@ -1224,7 +1021,7 @@ De façon sous-jacente, Le nouvel élément pointe simplement vers le premier é
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fonctions_pures">8.4. Fonctions pures</h3>
+<h3 id="_fonctions_pures">6.4. Fonctions pures</h3>
 <div class="paragraph">
 <p>Une fonction est dite <strong>pure</strong> si elle ne produit aucun effet secondaire.</p>
 </div>
@@ -1270,7 +1067,7 @@ de ses <strong>paramètres d&#8217;entrée</strong>, et ne modifie rien d&#8217;
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_fonctions_de_liste">8.5. Fonctions de liste</h3>
+<h3 id="_fonctions_de_liste">6.5. Fonctions de liste</h3>
 <div class="paragraph">
 <p>L&#8217;immutabilité implique que vous ne pouvez pas faire une boucle "for" dans Elm : vous ne pouvez pas changer la valeur de l&#8217;index à chaque itération.</p>
 </div>
@@ -1292,7 +1089,7 @@ de ses <strong>paramètres d&#8217;entrée</strong>, et ne modifie rien d&#8217;
 </div>
 </div>
 <div class="sect2">
-<h3 id="_lambda">8.6. Lambda</h3>
+<h3 id="_lambda">6.6. Lambda</h3>
 <div class="paragraph">
 <p>Lamba = fonction anonyme <strong>Lamba = fonction anonyme</strong></p>
 </div>
@@ -1334,7 +1131,7 @@ Il a été choisi parce que, visuellement, c&#8217;est le caractère le plus pro
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annotations_de_type">9. Annotations de type</h2>
+<h2 id="_annotations_de_type">7. Annotations de type</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les annotations de type sont très utiles en Elm, bien qu&#8217;elles soient facultatives. En plus de documenter votre code,
@@ -1440,13 +1237,13 @@ Cela permet de donner une indication de ce que ce type doit contenir.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_larchitecture_elm">10. L&#8217;architecture Elm</h2>
+<h2 id="_larchitecture_elm">8. L&#8217;architecture Elm</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>L&#8217;architecture Elm est souvent appelée "TEA" (<em>The Elm Architecture</em>)</p>
 </div>
 <div class="sect2">
-<h3 id="_le_pattern_mvu">10.1. Le pattern MVU</h3>
+<h3 id="_le_pattern_mvu">8.1. Le pattern MVU</h3>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/MVU.jpg" alt="MVU">
@@ -1480,7 +1277,7 @@ modifié le contenu d&#8217;un champ de saisie ou cliqué sur un bouton ;</p>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
-<h4 id="_le_pattern_mvu_par_lexemple">10.1.1. Le pattern MVU par l&#8217;exemple</h4>
+<h4 id="_le_pattern_mvu_par_lexemple">8.1.1. Le pattern MVU par l&#8217;exemple</h4>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/muv-sandbox-modal.png" alt="muv sandbox modal">
@@ -1524,7 +1321,7 @@ Ce modèle est envoyé à la fonction <code>view</code> par le runtime Elm au d�
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
-<h4 id="_rendons_le_runtime_visible">10.1.2. Rendons le runtime visible !</h4>
+<h4 id="_rendons_le_runtime_visible">8.1.2. Rendons le runtime visible !</h4>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/muv-sandbox-runtime.png" alt="muv sandbox runtime">
@@ -1533,7 +1330,7 @@ Ce modèle est envoyé à la fonction <code>view</code> par le runtime Elm au d�
 </div>
 </div>
 <div class="sect2">
-<h3 id="_structure_typique_dun_fichier_elm">10.2. Structure typique d&#8217;un fichier Elm</h3>
+<h3 id="_structure_typique_dun_fichier_elm">8.2. Structure typique d&#8217;un fichier Elm</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-c1">-- import section</span>
@@ -1559,21 +1356,9 @@ En raison de la nature déclarative du langage, ce n&#8217;est pas un problème 
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_mise_en_œuvre_de_larchitecture_elm">10.3. Mise en œuvre de l&#8217;architecture Elm</h3>
+<h3 id="_mise_en_œuvre_de_larchitecture_elm">8.3. Mise en œuvre de l&#8217;architecture Elm</h3>
 <div class="paragraph">
 <p>TEA utilise le <a href="https://package.elm-lang.org/packages/elm/browser/latest/">module Browser</a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Installer le module Browser</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-nv">elm</span> <span class="tok-nv">install</span> <span class="tok-nv">elm</span><span class="tok-nf">/</span><span class="tok-nv">browser</span></code></pre>
-</div>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1604,7 +1389,7 @@ En raison de la nature déclarative du langage, ce n&#8217;est pas un problème 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_définir_un_type_pour_le_modèle">10.3.1. Définir un type pour le modèle</h4>
+<h4 id="_définir_un_type_pour_le_modèle">8.3.1. Définir un type pour le modèle</h4>
 <div class="paragraph">
 <p>Toutes les fonctions du module Browser nécessitent un modèle.</p>
 </div>
@@ -1646,7 +1431,7 @@ qui définit la valeur initiale du modèle (ici une chaîne vide)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_invoke_browser_sandbox">10.3.2. Invoke Browser.sandbox</h4>
+<h4 id="_invoke_browser_sandbox">8.3.2. Invoke Browser.sandbox</h4>
 <div class="paragraph">
 <p>Browser.sandbox prend un <strong>record</strong> comme paramètre</p>
 </div>
@@ -1685,7 +1470,7 @@ qui définit la valeur initiale du modèle (ici une chaîne vide)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_définir_les_événements_émis_par_la_vue">10.4. Définir les événements émis par la vue</h3>
+<h3 id="_définir_les_événements_émis_par_la_vue">8.4. Définir les événements émis par la vue</h3>
 <div class="paragraph">
 <p>Créez un type <strong>personnalisé</strong>.</p>
 </div>
@@ -1716,7 +1501,7 @@ qui définit la valeur initiale du modèle (ici une chaîne vide)</p>
 <p>Le résultat d&#8217;un appel à <code>InputChanged</code> est la création d&#8217;un message de type <code>Msg</code>.</p>
 </div>
 <div class="sect3">
-<h4 id="_annotations_de_type_2">10.4.1. Annotations de type</h4>
+<h4 id="_annotations_de_type_2">8.4.1. Annotations de type</h4>
 <div class="paragraph">
 <p>Ajoutez une annotation de type à la fonction principale.</p>
 </div>
@@ -1748,7 +1533,7 @@ qui définit la valeur initiale du modèle (ici une chaîne vide)</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
-<h4 id="_détection_dévénements_sur_la_vue">10.4.2. Détection d&#8217;événements sur la vue</h4>
+<h4 id="_détection_dévénements_sur_la_vue">8.4.2. Détection d&#8217;événements sur la vue</h4>
 <div class="paragraph">
 <p>Le module Html.events fournit des fonctions permettant de réagir aux actions de l&#8217;utilisateur.</p>
 </div>
@@ -1788,7 +1573,7 @@ qui définit la valeur initiale du modèle (ici une chaîne vide)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_créer_une_fonction_update">10.4.3. Créer une fonction <code>update</code></h4>
+<h4 id="_créer_une_fonction_update">8.4.3. Créer une fonction <code>update</code></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span>
@@ -1827,7 +1612,7 @@ chaque fois qu&#8217;elle est invoquée.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mise_à_jour_du_modèle">10.4.4. Mise à jour du modèle</h4>
+<h4 id="_mise_à_jour_du_modèle">8.4.4. Mise à jour du modèle</h4>
 <div class="paragraph">
 <p><code>update</code> doit mettre à jour le modèle en fonction du contenu du message. Cette dernière est analysée à l&#8217;aide du pattern matching :</p>
 </div>
@@ -1854,20 +1639,12 @@ Il permettra également de déconstruire le contenu du message pour récupérer 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_débogueur_voyageant_dans_le_temps">10.4.5. Débogueur "voyageant dans le temps"</h4>
+<h4 id="_débogueur_voyageant_dans_le_temps">8.4.5. Débogueur "voyageant dans le temps"</h4>
 <div class="paragraph">
-<p>Compilez en mode debug :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>elm make src/Main.elm --output elm.js --debug</code></pre>
-</div>
+<p>Entrez plusieurs caractères dans le champ de saisie, puis cliquez sur le bouton DEBUG en haut à droite pour accéder au débogueur. Le bouton OUTPUT cache le débogueur.</p>
 </div>
 <div class="paragraph">
-<p>Entrez plusieurs caractères dans le champ de saisie, puis cliquez sur <strong>Explore History</strong> pour accéder au débogueur.</p>
-</div>
-<div class="paragraph">
-<p>Dans la fenêtre qui s&#8217;ouvre, vous pouvez voir chaque message qui a été envoyé.</p>
+<p>Dans le panneau qui apparaît, vous pouvez voir chaque message qui a été envoyé.</p>
 </div>
 <div class="paragraph">
 <p>Cliquer sur un message renvoie l&#8217;application dans l&#8217;état dans lequel elle se trouvait au moment de son envoi.
@@ -1893,7 +1670,7 @@ Cela permet, par exemple, de rejouer et d&#8217;analyser un scénario qui a caus
 </div>
 </div>
 <div class="sect3">
-<h4 id="_résumons_larchitecture_elm">10.4.6. Résumons : l&#8217;Architecture Elm</h4>
+<h4 id="_résumons_larchitecture_elm">8.4.6. Résumons : l&#8217;Architecture Elm</h4>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/tea_sandbox.png" alt="tea sandbox" height="450">
@@ -1927,17 +1704,17 @@ et élimine donc le besoin d&#8217;un framework.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Le code de cette étape est disponible sur <a href="https://github.com/PascalLeMerrer/elm-workshop/tree/step3">le dépôt github</a>, au tag <strong>step 3</strong>.</p>
+<p>Le code de cette étape est disponible sur <a href="https://ellie-app.com/5y8fSnVX6Q7a1">le dépôt github</a></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_communiquer_avec_un_serveur">11. Communiquer avec un serveur</h2>
+<h2 id="_communiquer_avec_un_serveur">9. Communiquer avec un serveur</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_effets_de_bord">11.1. Effets de bord</h3>
+<h3 id="_effets_de_bord">9.1. Effets de bord</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1970,7 +1747,7 @@ Le message peut contenir, par exemple, le nombre aléatoire généré.</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_architecture_elm_avec_effets_de_bord">11.2. Architecture Elm avec effets de bord</h3>
+<h3 id="_architecture_elm_avec_effets_de_bord">9.2. Architecture Elm avec effets de bord</h3>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/tea_element.png" alt="tea element" height="500">
@@ -1995,7 +1772,7 @@ Le message peut contenir, par exemple, le nombre aléatoire généré.</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_modifier_le_type_de_demande">11.3. Modifier le type de demande</h3>
+<h3 id="_modifier_le_type_de_demande">9.3. Modifier le type de demande</h3>
 <div class="paragraph">
 <p>Remplacez Browser.sandbox par Browser.element puis compilez.</p>
 </div>
@@ -2018,7 +1795,7 @@ Le compilateur indique clairement le champ manquant.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mettre_en_œuvre_les_abonnements">11.4. Mettre en œuvre les abonnements</h3>
+<h3 id="_mettre_en_œuvre_les_abonnements">9.4. Mettre en œuvre les abonnements</h3>
 <div class="paragraph">
 <p>Fournir une mise en œuvre minimale des abonnements à Browser.element :</p>
 </div>
@@ -2046,7 +1823,7 @@ Il retournera donc Sub.none, quelle que soit la valeur du modèle qui lui est pa
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_adapter_la_fonction_dinitialisation">11.5. Adapter la fonction d&#8217;initialisation</h3>
+<h3 id="_adapter_la_fonction_dinitialisation">9.5. Adapter la fonction d&#8217;initialisation</h3>
 <div class="paragraph">
 <p>Remplacez <code>initialModel</code> par une fonction nommée <code>init</code>:</p>
 </div>
@@ -2093,7 +1870,7 @@ Unit n&#8217;est qu&#8217;un tuple vide. Il est utilisé pour représenter l&#82
 </div>
 </div>
 <div class="sect2">
-<h3 id="_adapter_la_fonction_update">11.6. Adapter la fonction update</h3>
+<h3 id="_adapter_la_fonction_update">9.6. Adapter la fonction update</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-nv">update</span> <span class="tok-nf">:</span> <span class="tok-kt">Msg</span> <span class="tok-nf">-&gt;</span> <span class="tok-kt">Model</span> <span class="tok-nf"><strong>-&gt;</span> <span class="tok-p">(</span><span class="tok-kt">Model</span><span class="tok-p">,</span> <span class="tok-kt">Cmd</span> <span class="tok-kt">Msg</span><span class="tok-p">)</span><span class="tok-nf"></strong></span>
@@ -2114,7 +1891,7 @@ Cmd.none indique au runtime elm qu&#8217;il n&#8217;y a pas de commande à exéc
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_ajouter_un_formulaire">11.7. Ajouter un formulaire</h3>
+<h3 id="_ajouter_un_formulaire">9.7. Ajouter un formulaire</h3>
 <div class="paragraph">
 <p>La balise de formulaire autour du champ de saisie est utilisée pour détecter la validation.</p>
 </div>
@@ -2143,7 +1920,7 @@ le code qui génère le formulaire est extrait dans un nouvelle fonction nommée
 </div>
 </div>
 <div class="sect2">
-<h3 id="_déclarer_un_nouveau_constructeur_de_message">11.8. Déclarer un nouveau constructeur de message</h3>
+<h3 id="_déclarer_un_nouveau_constructeur_de_message">9.8. Déclarer un nouveau constructeur de message</h3>
 <div class="paragraph">
 <p>Ajouter un constructeur de message à utiliser lorsque le formulaire est soumis :</p>
 </div>
@@ -2168,7 +1945,7 @@ Ils représenteront toutes les actions possibles sur la page.</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_détecter_la_validation_du_formulaire">11.9. Détecter la validation du formulaire</h3>
+<h3 id="_détecter_la_validation_du_formulaire">9.9. Détecter la validation du formulaire</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2184,14 +1961,21 @@ Ils représenteront toutes les actions possibles sur la page.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exécuter_une_requête_http_get">11.10. Exécuter une requête HTTP GET</h3>
+<h3 id="_exécuter_une_requête_http_get">9.10. Exécuter une requête HTTP GET</h3>
 <div class="paragraph">
 <p>Installez le module elm/http :</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>elm install elm/http</code></pre>
+<div class="paragraph">
+<p>Cliquez</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/package-icon.png" alt="package icon">
+</div>
+</div>
+<div class="paragraph">
+<p>pour afficher le panneau de package, puis recherchez le module http et installez-le.
+Cliquez à nouveau sur ce bouton pour masquer le panneau de package.</p>
 </div>
 <div class="paragraph">
 <p>La <a href="https://package.elm-lang.org/packages/elm/http/latest/Http">documentation</a> du module Http donne l&#8217;annotation de type de la fonction get :</p>
@@ -2208,7 +1992,7 @@ Ils représenteront toutes les actions possibles sur la page.</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_envoyer_une_demande_de_recherche_dimages">11.11. Envoyer une demande de recherche d&#8217;images</h3>
+<h3 id="_envoyer_une_demande_de_recherche_dimages">9.11. Envoyer une demande de recherche d&#8217;images</h3>
 <div class="paragraph">
 <p>Pour l&#8217;instant, nous traiterons les réponses comme du texte.</p>
 </div>
@@ -2263,7 +2047,7 @@ Nous définirons ce type de constructeur dans une étape ultérieure.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_digression_le_type_de_résultat">11.12. Digression : le type de résultat</h3>
+<h3 id="_digression_le_type_de_résultat">9.12. Digression : le type de résultat</h3>
 <div class="paragraph">
 <p>Le type <strong>Result</strong> représente une réponse à une opération qui peut échouer. Il a deux constructeurs : l&#8217;un pour encapsuler le résultat d&#8217;une opération réussie, l&#8217;autre pour encapsuler une erreur. La définition de ce type dans la bibliothèque de base ressemble à :</p>
 </div>
@@ -2292,7 +2076,7 @@ Nous définirons ce type de constructeur dans une étape ultérieure.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_déclarer_le_type_de_réponse">11.13. Déclarer le type de réponse</h3>
+<h3 id="_déclarer_le_type_de_réponse">9.13. Déclarer le type de réponse</h3>
 <div class="paragraph">
 <p>La fonction <code>update</code> doit traiter les réponses à la requête HTTP.</p>
 </div>
@@ -2329,7 +2113,7 @@ Nous définirons ce type de constructeur dans une étape ultérieure.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_traiter_la_réponse">11.14. Traiter la réponse</h3>
+<h3 id="_traiter_la_réponse">9.14. Traiter la réponse</h3>
 <div class="paragraph">
 <p>Le compilateur nous indique qu&#8217;un cas n&#8217;est pas traité par la fonction <code>update</code> :</p>
 </div>
@@ -2379,7 +2163,7 @@ Le modèle est donc retourné inchangé.</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_enrichir_le_modèle">11.15. Enrichir le modèle</h3>
+<h3 id="_enrichir_le_modèle">9.15. Enrichir le modèle</h3>
 <div class="paragraph">
 <p>Pour afficher la réponse du serveur, le modèle
  doit contenir la valeur entrée par l&#8217;utilisateur et la réponse du serveur.</p>
@@ -2405,7 +2189,7 @@ C&#8217;est une expérience typique de Elm. Nous parlons de <strong>Compiler Dri
 </div>
 </div>
 <div class="sect2">
-<h3 id="_initialiser_le_nouveau_modèle">11.16. Initialiser le nouveau modèle</h3>
+<h3 id="_initialiser_le_nouveau_modèle">9.16. Initialiser le nouveau modèle</h3>
 <div class="paragraph">
 <p>La valeur initiale des champs du record est une chaîne vide<br>
 <strong>Il n&#8217;y a pas de valeur nulle en Elm.</strong></p>
@@ -2438,7 +2222,7 @@ C&#8217;est une expérience typique de Elm. Nous parlons de <strong>Compiler Dri
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_utiliser_le_record_dans_la_fonction_update">11.17. Utiliser le record dans la fonction update</h3>
+<h3 id="_utiliser_le_record_dans_la_fonction_update">9.17. Utiliser le record dans la fonction update</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kt">InputChanged</span> <span class="tok-nv">value</span> <span class="tok-nf">-&gt;</span>
@@ -2492,7 +2276,7 @@ C&#8217;est une expérience typique de Elm. Nous parlons de <strong>Compiler Dri
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_mettre_à_jour_le_modèle_en_fonction_de_la_réponse_reçue">11.18. Mettre à jour le modèle en fonction de la réponse reçue</h3>
+<h3 id="_mettre_à_jour_le_modèle_en_fonction_de_la_réponse_reçue">9.18. Mettre à jour le modèle en fonction de la réponse reçue</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span>    <span class="tok-kr">case</span> <span class="tok-nv">msg</span> <span class="tok-kr">of</span>
@@ -2551,7 +2335,7 @@ C&#8217;est une expérience typique de Elm. Nous parlons de <strong>Compiler Dri
 </div>
 </div>
 <div class="sect2">
-<h3 id="_afficher_la_réponse">11.19. Afficher la réponse</h3>
+<h3 id="_afficher_la_réponse">9.19. Afficher la réponse</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2571,7 +2355,7 @@ C&#8217;est une expérience typique de Elm. Nous parlons de <strong>Compiler Dri
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_résultat_escompté_2">11.20. Résultat escompté</h3>
+<h3 id="_résultat_escompté_2">9.20. Résultat escompté</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/screenshots/ReponseBrute.png" alt="ReponseBrute">
@@ -2586,16 +2370,16 @@ C&#8217;est une expérience typique de Elm. Nous parlons de <strong>Compiler Dri
 </div>
 </div>
 <div class="paragraph">
-<p>Le code de cette étape est disponible sur <a href="https://github.com/PascalLeMerrer/elm-workshop/tree/step4">le dépôt github</a>, sous le tag <strong>step 4</strong>.</p>
+<p>Le code pour cette étape est disponible sur <a href="https://ellie-app.com/5y8zk8BHGfYa1">le dépôt github</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_decoder_du_json">12. Decoder du JSON</h2>
+<h2 id="_decoder_du_json">10. Decoder du JSON</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_function_application_operator">12.1. Function Application Operator</h3>
+<h3 id="_function_application_operator">10.1. Function Application Operator</h3>
 <div class="paragraph">
 <p>Pour convertir le Json en structure de données Elm, nous aurons besoin de l&#8217;opérateur "pipe" :</p>
 </div>
@@ -2625,7 +2409,7 @@ C&#8217;est une expérience typique de Elm. Nous parlons de <strong>Compiler Dri
 </div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
-<h4 id="_réponse_du_serveur">12.1.1. Réponse du serveur</h4>
+<h4 id="_réponse_du_serveur">10.1.1. Réponse du serveur</h4>
 <div class="paragraph">
 <p>La réponse du serveur se présente sous la forme suivante :</p>
 </div>
@@ -2653,7 +2437,7 @@ Chacun de ces objets possède une propriété <code>url</code>, qui elle-même p
 </div>
 </div>
 <div class="sect3">
-<h4 id="_déclarer_le_type_à_recevoir">12.1.2. Déclarer le type à recevoir</h4>
+<h4 id="_déclarer_le_type_à_recevoir">10.1.2. Déclarer le type à recevoir</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2663,18 +2447,13 @@ Chacun de ces objets possède une propriété <code>url</code>, qui elle-même p
 <p>installer le package <code>NoRedInk/elm-json-decode-pipeline</code></p>
 </li>
 <li>
-<p>créez un module <code>Image</code> dans un fichier <code>Image.elm</code> avec le contenu suivant :</p>
+<p>Ajoutez ce code :</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><span class="small">src/Image.elm</span></p>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kn">module </span><span class="tok-nc">Image</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-kt">Image</span><span class="tok-p">,</span> <span class="tok-nv">imageListDecoder</span><span class="tok-p">)</span>
-
-
+<pre class="pygments highlight"><code data-lang="elm"><span></span>
 <span class="tok-nf"><strong></span><span class="tok-kr">import</span> <span class="tok-kt">Json</span><span class="tok-nf">.</span><span class="tok-kt">Decode</span> <span class="tok-kr">as</span> <span class="tok-kt">Decode</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-kt">Decoder</span><span class="tok-p">,</span> <span class="tok-nv">field</span><span class="tok-p">,</span> <span class="tok-nv">int</span><span class="tok-p">,</span> <span class="tok-nv">list</span><span class="tok-p">,</span> <span class="tok-nv">string</span><span class="tok-p">)</span>
 <span class="tok-kn">import </span><span class="tok-nc">Json.Decode.Pipeline</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-nv">required</span><span class="tok-p">,</span> <span class="tok-nv">requiredAt</span><span class="tok-p">)</span><span class="tok-nf"></strong></span>
 
@@ -2730,10 +2509,7 @@ chacun d&#8217;entre eux étant créé à l&#8217;aide de <code>imageDecoder</co
 </div>
 </div>
 <div class="sect3">
-<h4 id="_modifier_le_type_de_message_reçu">12.1.3. Modifier le type de message reçu</h4>
-<div class="paragraph">
-<p><span class="small">src/Main.elm</span></p>
-</div>
+<h4 id="_modifier_le_type_de_message_reçu">10.1.3. Modifier le type de message reçu</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kr">type</span> <span class="tok-kt">Msg</span>
@@ -2748,10 +2524,7 @@ chacun d&#8217;entre eux étant créé à l&#8217;aide de <code>imageDecoder</co
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
-<h4 id="_utiliser_le_décodeur">12.1.4. Utiliser le décodeur</h4>
-<div class="paragraph">
-<p><span class="small">src/Main.elm</span></p>
-</div>
+<h4 id="_utiliser_le_décodeur">10.1.4. Utiliser le décodeur</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span>
@@ -2769,7 +2542,7 @@ chacun d&#8217;entre eux étant créé à l&#8217;aide de <code>imageDecoder</co
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enregistrer_des_images_dans_le_modèle">12.2. Enregistrer des images dans le modèle</h3>
+<h3 id="_enregistrer_des_images_dans_le_modèle">10.2. Enregistrer des images dans le modèle</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2827,16 +2600,16 @@ chacun d&#8217;entre eux étant créé à l&#8217;aide de <code>imageDecoder</co
 </table>
 </div>
 <div class="paragraph">
-<p>Le code de cette étape est disponible sur <a href="https://github.com/PascalLeMerrer/elm-workshop/tree/step5">le dépôt github</a>, sous le tag <strong>step 5</strong>.</p>
+<p>Le code de cette étape est disponible sur <a href="https://ellie-app.com/5yjrwGjRhYBa1">le dépôt github</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_affichage_des_réponses">13. Affichage des réponses</h2>
+<h2 id="_affichage_des_réponses">11. Affichage des réponses</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_afficher_les_vignettes">13.1. Afficher les vignettes</h3>
+<h3 id="_afficher_les_vignettes">11.1. Afficher les vignettes</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-nv">view</span> <span class="tok-nv">model</span> <span class="tok-nf">=</span>
@@ -2876,7 +2649,7 @@ Au lieu de cela, nous parcourons les listes avec des fonctions telles que <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_améliorer_la_présentation_des_images">13.2. Améliorer la présentation des images</h3>
+<h3 id="_améliorer_la_présentation_des_images">11.2. Améliorer la présentation des images</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2893,7 +2666,7 @@ Au lieu de cela, nous parcourons les listes avec des fonctions telles que <code>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_résultat_attendu_2">13.3. Résultat attendu</h3>
+<h3 id="_résultat_attendu_3">11.3. Résultat attendu</h3>
 <div class="imageblock text-center">
 <div class="content">
 <img src="images/screenshots/Resultats.png" alt="Resultats">
@@ -2901,7 +2674,7 @@ Au lieu de cela, nous parcourons les listes avec des fonctions telles que <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_amélioration_de_laffichage_du_message_derreur">13.4. Amélioration de l&#8217;affichage du message d&#8217;erreur</h3>
+<h3 id="_amélioration_de_laffichage_du_message_derreur">11.4. Amélioration de l&#8217;affichage du message d&#8217;erreur</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2940,324 +2713,20 @@ Au lieu de cela, nous parcourons les listes avec des fonctions telles que <code>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_résultats_escomptés_2">13.5. Résultats escomptés</h3>
+<h3 id="_résultats_escomptés">11.5. Résultats escomptés</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/screenshots/NotificationErreur.png" alt="NotificationErreur">
 </div>
 </div>
 <div class="paragraph">
-<p>Le code de cette étape est disponible sur <a href="https://github.com/PascalLeMerrer/elm-workshop/tree/step6">le dépôt github</a>, sous le tag <strong>step 6</strong>.</p>
+<p>Le code de cette étape est disponible sur <a href="https://ellie-app.com/5yqgp784F5na1">le dépôt github</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tester_le_code_métier">14. Tester le code métier</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Nous aimerions proposer des images adaptées pour Desktop d&#8217;une part, et pour mobile d&#8217;autre part.</p>
-</div>
-<div class="paragraph">
-<p>Vous devrez donc ajouter un mécanisme de filtrage des images en fonction de leur format : paysage ou portrait.</p>
-</div>
-<div class="sect2">
-<h3 id="_filtrer_les_images_en_fonction_de_leur_format">14.1. Filtrer les images en fonction de leur format</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>enrichissez le type <code>Image</code> avec des champs <code>height</code> et <code>width</code></p>
-</li>
-<li>
-<p>récupèrez la valeur de ces champs dans la réponse du serveur</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ajouter_le_mode_courant_au_modèle">14.2. Ajouter le mode courant au modèle</h3>
-<div class="paragraph">
-<p>Le modèle doit indiquer si nous affichons les photos en portrait, en paysage ou les deux (état par défaut).<br></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>déclarer un type personnalisé <code>Format</code> dans le module <code>Image</code> ; les constructeurs possibles sont <code>Portrait</code>, <code>Landscape</code> et <code>Any</code>.</p>
-</li>
-<li>
-<p>exporter ce type <strong>et ses constructeurs</strong> avec <code>exposing (Format(&#8230;&#8203;), &#8230;&#8203;.)`</code>.</p>
-</li>
-<li>
-<p>importer ce type <strong>et ses constructeurs</strong> dans Main, avec la même syntaxe</p>
-</li>
-<li>
-<p>ajouter un champ <code>format</code> au modèle</p>
-</li>
-<li>
-<p>donnez-lui une valeur initiale de "Any"</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ajouter_une_liste_déroulante">14.3. Ajouter une liste déroulante.</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-nv">viewForm</span> <span class="tok-nf">=</span>
-    <span class="tok-nv">form</span> <span class="tok-p">[</span> <span class="tok-nv">onSubmit</span> <span class="tok-kt">FormSubmitted</span> <span class="tok-p">]</span>
-        <span class="tok-p">[</span> <span class="tok-nv">input</span>
-            <span class="tok-nf">...</span>
-        <span class="tok-nf"><strong></span><span class="tok-p">,</span> <span class="tok-nv">div</span> <span class="tok-p">[</span><span class="tok-nv">class</span> <span class="tok-s">&quot;select&quot;</span><span class="tok-p">]</span>
-            <span class="tok-p">[</span><span class="tok-nv">select</span>
-                <span class="tok-p">[]</span>
-                <span class="tok-p">[</span> <span class="tok-nv">option</span> <span class="tok-p">[</span><span class="tok-nv">value</span> <span class="tok-s">&quot;any&quot;</span><span class="tok-p">]</span> <span class="tok-p">[</span> <span class="tok-nv">text</span> <span class="tok-s">&quot;Tous&quot;</span> <span class="tok-p">]</span>
-                <span class="tok-p">,</span> <span class="tok-nv">option</span> <span class="tok-p">[</span><span class="tok-nv">value</span> <span class="tok-s">&quot;landscape&quot;</span><span class="tok-p">]</span> <span class="tok-p">[</span> <span class="tok-nv">text</span> <span class="tok-s">&quot;Paysage&quot;</span> <span class="tok-p">]</span>
-                <span class="tok-p">,</span> <span class="tok-nv">option</span> <span class="tok-p">[</span><span class="tok-nv">value</span> <span class="tok-s">&quot;portrait&quot;</span><span class="tok-p">]</span> <span class="tok-p">[</span> <span class="tok-nv">text</span> <span class="tok-s">&quot;Portrait&quot;</span> <span class="tok-p">]</span>
-                <span class="tok-p">]</span>
-            <span class="tok-p">]</span><span class="tok-nf"></strong></span>
-        <span class="tok-p">]</span></code></pre>
-</div>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_envoyer_un_message_lorsque_la_sélection_change">14.4. Envoyer un message lorsque la sélection change</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kn">import </span><span class="tok-nc">Html.Events</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-nv">on</span><span class="tok-p">,</span> <span class="tok-nv">targetValue</span><span class="tok-p">,</span> <span class="tok-nv">onClick</span><span class="tok-p">,</span> <span class="tok-nv">onInput</span><span class="tok-p">,</span> <span class="tok-nv">onSubmit</span><span class="tok-p">)</span>
-<span class="tok-kn">import </span><span class="tok-nc">Json.Decode</span>
-<span class="tok-nf">...</span>
-<span class="tok-kr">type</span> <span class="tok-kt">Msg</span>
-  <span class="tok-nf">=</span> <span class="tok-nf">...</span>
-  <span class="tok-nf"><strong>|</span> <span class="tok-kt">FormatChanged</span> <span class="tok-kt">String</span><span class="tok-nf"></strong></span>
-
-<span class="tok-nf">...</span>
-  <span class="tok-p">,</span> <span class="tok-nv">div</span> <span class="tok-p">[</span><span class="tok-nv">class</span> <span class="tok-s">&quot;select&quot;</span><span class="tok-p">]</span>
-  <span class="tok-p">[</span> <span class="tok-nv">select</span>
-    <span class="tok-p">[</span> <span class="tok-nf"><strong></span><span class="tok-nv">onInput</span> <span class="tok-kt">FormatChanged</span><span class="tok-nf"></strong></span>
-    <span class="tok-p">]</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Lorsque la sélection dans la liste déroulante change, un message construit avec FormatChanged et la chaîne de caractères sélectionnée est envoyé.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_mémoriser_le_format_sélectionné">14.5. Mémoriser le format sélectionné</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>enrichir la fonction `update' pour stocker le format sélectionné dans le modèle</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Astuce : dans un <code>case</code>, la branche <code>_ &#8594; &#8230;&#8203;.</code> est exécutée pour n&#8217;importe quelle valeur.</p>
-</div>
-<div class="sect3">
-<h4 id="_ecrire_une_fonction_de_filtrage">14.5.1. Ecrire une fonction de filtrage</h4>
-<div class="paragraph">
-<p>Nous allons écrire les tests unitaires qui décrivent le comportement de <code>filterImages</code> avant de l&#8217;implémenter.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>dans le module <code>Image</code>, créez une fonction <code>filterImages</code>, qui prend comme paramètre un <code>Format</code> et une liste d&#8217;images</p>
-</li>
-<li>
-<p>tout d&#8217;abord, écrivez <code>filterImages</code> pour qu&#8217;il retourne une liste vide</p>
-</li>
-<li>
-<p>l&#8217;implémentation finale de <code>filterImages</code> retournera la liste des images correspondant au format passé en paramètre</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Mettre la liste d&#8217;images en dernier paramètre permet d&#8217;enchainer des applications de fonctions (ex : map puis filtre puis tri)</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_initialiser_les_tests">14.6. Initialiser les tests</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>tapez <code>elm-test init</code> dans le terminal, à la racine du projet.</p>
-</li>
-<li>
-<p>renommez <code>tests/Example.elm</code> en <code>tests/TestImage.elm</code>.</p>
-</li>
-<li>
-<p>ouvrez <code>tests/TestImage.elm</code>.</p>
-</li>
-<li>
-<p>renommez le module en <code>TestImage</code>.</p>
-</li>
-<li>
-<p>suivez le lien dans la todo pour afficher la documentation</p>
-</li>
-<li>
-<p>remplacez la suite de tests dans <code>TestImage.elm</code> par celle de la documentation</p>
-</li>
-<li>
-<p>lancez <code>elm-test</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Trois tests devraient réussir.</p>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code>todo</code> est une fonction du framework de test qui crée un test qui échouera systématiquement.
-Mais le résultat d&#8217;un test "todo" ne s&#8217;affiche que si aucun autre test n&#8217;échoue.</p>
-</div>
-<div class="paragraph">
-<p>En plus des tests de base, elm-test propose :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>du fuzzy testing : faire plusieurs appels à la fonction à tester, avec des valeurs d&#8217;entrée générées de manière aléatoire, pour tester en un seul test de nombreux cas, y compris ceux auxquels le développeur n&#8217;aurait pas pensé.</p>
-</li>
-<li>
-<p>de tester la vue : vous pouvez tester le HTML généré par l&#8217;application.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_contenu_dun_module_de_test">14.6.1. Contenu d&#8217;un module de test</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Une <code>suite</code> de tests par module</p>
-</li>
-<li>
-<p>Il est possible d&#8217;imbriquer des appels à <code>describe</code>.</p>
-</li>
-<li>
-<p>Le module Expect fournit des assertions</p>
-</li>
-<li>
-<p><a href="https://package.elm-lang.org/packages/elm-explorations/test/latest/Expect#all">Expect.all</a> vérifie plusieurs assertions pour une valeur donnée</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_importer_le_code_à_tester">14.6.2. Importer le code à tester</h4>
-<div class="paragraph">
-<p>Seules les fonctions publiques et les types du module à tester sont accessibles.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="elm"><span></span><span class="tok-kn">module </span><span class="tok-nc">TestImage</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-nv">suite</span><span class="tok-p">)</span>
-
-<span class="tok-kn">import </span><span class="tok-nc">Expect</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-kt">Expectation</span><span class="tok-p">)</span>
-<span class="tok-kn">import </span><span class="tok-nc">Fuzz</span> <span class="tok-nv">exposing</span> <span class="tok-p">(</span><span class="tok-kt">Fuzzer</span><span class="tok-p">,</span> <span class="tok-nv">int</span><span class="tok-p">,</span> <span class="tok-nv">list</span><span class="tok-p">,</span> <span class="tok-nv">string</span><span class="tok-p">)</span>
-<span class="tok-nf"><strong></span><span class="tok-kr">import</span> <span class="tok-kt">Image</span> <span class="tok-nv">exposing</span> <span class="tok-nf">(..)</strong></span>
-<span class="tok-kn">import </span><span class="tok-nc">Test</span> <span class="tok-nv">exposing</span> <span class="tok-nf">(..)</span></code></pre>
-</div>
-</div>
-<div class="admonitionblock note speaker">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Il n&#8217;est possible de tester que ce qui est public.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_tester_et_implémenter_filterimages">14.7. Tester et implémenter filterImages</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Ajoutez un test qui vérifie le comportement de la fonction de filtrage, pour la valeur Any du format.</p>
-</li>
-<li>
-<p>Lancez l&#8217;exécution automatique des tests avec <code>elm-test --watch</code>.</p>
-</li>
-<li>
-<p>Le test devrait être compilé sans erreur, mais son exécution devrait échouer.</p>
-</li>
-<li>
-<p>Implémentez la fonction filterImages pour que le test passe, en utilisant l&#8217;implémentation la plus simple possible.</p>
-</li>
-<li>
-<p>Ajoutez un test pour la valeur Portrait.</p>
-</li>
-<li>
-<p>Ajustez l&#8217;implémentation de filterImages.</p>
-</li>
-<li>
-<p>Ajoutez un test pour la valeur Paysage.</p>
-</li>
-<li>
-<p>Ajustez l&#8217;implémentation de filterImages</p>
-</li>
-<li>
-<p>Utilisez filterImages dans <code>Main.elm</code> pour afficher uniquement les images correspondant au format sélectionné.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Recommandation : définir les données de test en dehors de la suite de tests</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_tests_quelques_recommandations">14.8. Tests : quelques recommandations</h3>
-<div class="paragraph">
-<p>Le site <a href="https://github.com/elm-community/elm-test#strategies-for-effective-testing">elm-test doc</a> donne des recommandations pour une stratégie de test efficace.</p>
-</div>
-<div class="paragraph">
-<p>Le code de cette étape est disponible sur <a href="https://github.com/PascalLeMerrer/elm-workshop/tree/step7">le dépôt github</a>, sous le tag <strong>step 7</strong>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_conclusion">15. Conclusion</h2>
+<h2 id="_conclusion">12. Conclusion</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>C&#8217;est la fin de cette première approche d&#8217;Elm.</p>
@@ -3304,7 +2773,7 @@ Mais le résultat d&#8217;un test "todo" ne s&#8217;affiche que si aucun autre t
 </div>
 </div>
 <div class="sect1">
-<h2 id="_aller_plus_loin">16. Aller plus loin</h2>
+<h2 id="_aller_plus_loin">13. Aller plus loin</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Si vous voulez aller plus loin, il existe des livres et des ressources en ligne. Par exemple:</p>
@@ -3342,7 +2811,7 @@ Mais le résultat d&#8217;un test "todo" ne s&#8217;affiche que si aucun autre t
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-16 14:11:27 +0100
+Last updated 2019-12-21 07:02:40 +0100
 </div>
 </div>
 </body>
